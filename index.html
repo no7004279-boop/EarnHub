@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EarnHub</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f3f4f6;
+  color:#111827;
+}
+header{
+  background:#2563eb;
+  color:white;
+  padding:25px 18px;
+  text-align:center;
+}
+header h1{margin:0;font-size:30px}
+header p{margin:8px 0 0}
+.container{
+  max-width:600px;
+  margin:auto;
+  padding:16px;
+}
+.card{
+  background:white;
+  padding:20px;
+  margin:14px 0;
+  border-radius:16px;
+  box-shadow:0 3px 12px #0001;
+}
+button{
+  width:100%;
+  padding:13px;
+  border:0;
+  border-radius:10px;
+  background:#2563eb;
+  color:white;
+  font-size:16px;
+  margin-top:10px;
+}
+button:hover{opacity:.9}
+input{
+  width:100%;
+  padding:13px;
+  margin:7px 0;
+  border:1px solid #d1d5db;
+  border-radius:9px;
+}
+.coins{
+  font-size:28px;
+  font-weight:bold;
+  color:#f59e0b;
+}
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+.option{
+  text-align:center;
+  padding:18px 8px;
+  border-radius:12px;
+  background:#eff6ff;
+}
+.option div{font-size:28px}
+.small{
+  color:#6b7280;
+  font-size:13px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🚀 EarnHub</h1>
+  <p>Earn • Learn • Grow</p>
+</header>
+
+<div class="container">
+
+  <div class="card">
+    <h2>💰 Your Balance</h2>
+    <div class="coins">🪙 0 Coins</div>
+    <p class="small">Coins ko future mein rewards/features ke liye use kiya ja sakta hai.</p>
+  </div>
+
+  <div class="card">
+    <h2>👤 Create Account</h2>
+    <input type="text" id="name" placeholder="Apna naam">
+    <input type="email" id="email" placeholder="Email">
+    <button onclick="signup()">Create Account</button>
+    <p id="message"></p>
+  </div>
+
+  <div class="card">
+    <h2>💎 EarnHub Features</h2>
+
+    <div class="grid">
+      <div class="option">
+        <div>📺</div>
+        <b>Ads</b>
+        <p class="small">Future mein ads</p>
+      </div>
+
+      <div class="option">
+        <div>⭐</div>
+        <b>Premium</b>
+        <p class="small">Paid membership</p>
+      </div>
+
+      <div class="option">
+        <div>🛒</div>
+        <b>Marketplace</b>
+        <p class="small">Buyer & Seller</p>
+      </div>
+
+      <div class="option">
+        <div>💎</div>
+        <b>Digital Products</b>
+        <p class="small">Paid features</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🛍️ Marketplace</h2>
+    <p>Yahan future mein sellers apne products/services list kar sakenge.</p>
+    <button onclick="alert('Marketplace jaldi add hoga!')">
+      Open Marketplace
+    </button>
+  </div>
+
+  <div class="card">
+    <h2>⭐ Premium</h2>
+    <p>Premium users ko extra features milenge.</p>
+    <button onclick="alert('Premium payment baad mein connect karenge!')">
+      Upgrade to Premium
+    </button>
+  </div>
+
+</div>
+
+<script>
+function signup(){
+  const name=document.getElementById("name").value;
+  const email=document.getElementById("email").value;
+  const msg=document.getElementById("message");
+
+  if(!name || !email){
+    msg.innerText="⚠️ Naam aur email bharna zaroori hai.";
+    msg.style.color="red";
+    return;
+  }
+
+  msg.innerText="✅ Account ready! Firebase hum next step mein connect karenge.";
+  msg.style.color="green";
+}
+</script>
+
+</body>
+</html>
